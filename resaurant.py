@@ -33,6 +33,4 @@ mex_restaurant.open_restaurant()
 sushi_restaurant.describe_restaurant()
 sushi_restaurant.open_restaurant()
 
-
 # END OF PROGRAM
- 
