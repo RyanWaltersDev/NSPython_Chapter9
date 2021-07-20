@@ -31,7 +31,10 @@ class Car:
 
     def increment_odometer(self, miles):
         '''Add the given amoutn to the odometer reading'''
-        self.odometer_reading += miles
+        if miles < 0:
+            print("Nice try! You can't roll back an odometer.")
+        else:
+            self.odometer_reading += miles
 
 # First Car
 
