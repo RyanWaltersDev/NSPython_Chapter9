@@ -29,6 +29,20 @@ class User:
     def reset_login_attempts(self):
         self.login_attempts = 0
 
+class Admin(User):
+    '''Model a special class for Administrators'''
+
+    def __init__(self, first_name, last_name, location, age, privileges, 
+                login_attempts=0):
+        '''Initalize attributes for admin'''
+        super().__init__(first_name, last_name, location, age, login_attempts)
+        self.privileges = privileges
+
+    def show_privileges(self, privileges):
+        '''Show a list of privileges for the admin'''
+        print("Welcome Admin! Here is your current list of privileges:")
+        print(", " .join(privileges))
+
 # Define instances
 user1 = User('ryan', 'walters', 'milledgeville, georgia', '27')
 user2 = User('brooke', 'yost', 'milledgeville, georgia', '23')
@@ -60,6 +74,14 @@ print(f"{user5.first_name.title()} has attempted to log in "
 user5.reset_login_attempts()
 print(f"{user5.first_name.title()} has attempted to log in "
     f"{user5.login_attempts} times.")
+
+# Admin instance
+admin = Admin('johnathan', 'walters', 'savannah', 'georgia', '23')
+
+# Admin method calls
+admin.greet_user()
+admin.describe_user()
+admin.show_privileges(['can delete post', 'can ban user', 'can edit post'])
 
 # END OF PROGRAM
         
