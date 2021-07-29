@@ -1,4 +1,4 @@
-# RyanWaltersDev Jul 13 2021 -- The car class
+'''A set of classes used to represent a car'''
 
 class Car:
     '''A simple attempt to represent a car.'''
@@ -36,26 +36,46 @@ class Car:
         else:
             self.odometer_reading += miles
 
-# First Car
+class Battery:
+    '''A simple attempt to model a battery for an electric car.'''
 
-my_new_car = Car('audi', 'a4', 2019)
-print(my_new_car.get_descriptive_name())
+    def __init__(self, battery_size=75):
+        '''Initialize the battery's attributes.'''
+        self.battery_size = battery_size
 
-my_new_car.odometer_reading = 23
-my_new_car.read_odometer()
+    def describe_battery(self):
+        '''Print a statement describing the battery size.'''
+        print(f"This car has a {self.battery_size}-kwh battery.")\
 
-my_new_car.update_odometer(33)
-my_new_car.read_odometer()
+    def get_range(self):
+        '''Print a statement about the range this battery provides'''
+        if self.battery_size == 75:
+            range = 260
+            print(f"This car can go about {range} miles on a full charge.")
+        elif self.battery_size == 100:
+            range = 315
+            print(f"This car can go about {range} miles on a full charge.")
+        else:
+            print(f"The battery size that you have entered is not valid.")
 
-# Second Car
+    def upgrade_battery(self):
+        '''Check battery size and set capacity to 100'''
+        if self.battery_size != 100:
+            self.battery_size = 100
 
-my_used_car = Car('lexus', 'crv', 2011)
-print(my_used_car.get_descriptive_name())
+class ElectricCar(Car):
+    '''Represents aspects of a car, specific to electric vehicles.'''
 
-my_used_car.update_odometer(120_550)
-my_used_car.read_odometer()
+    def __init__(self, make, model, year):
+        '''
+        Initialize attributes of the parent class.
+        Then initialize attributes specific to an electric car.
+        '''
+        super().__init__(make, model, year)
+        self.battery = Battery()
 
-my_used_car.increment_odometer(5_000)
-my_used_car.read_odometer()
+    def fill_gas_tank(self):
+        '''Electric cars don't have gas tanks.'''
+        print(f"This car does not need a gas tank!")
 
 # END OF PROGRAM
