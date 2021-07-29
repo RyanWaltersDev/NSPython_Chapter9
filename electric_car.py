@@ -58,6 +58,11 @@ class Battery:
         else:
             print(f"The battery size that you have entered is not valid.")
 
+    def upgrade_battery(self):
+        '''Check battery size and set capacity to 100'''
+        if self.battery_size != 100:
+            self.battery_size = 100
+
 
 class ElectricCar(Car):
     '''Represents aspects of a car, specific to electric vehicles.'''
@@ -77,6 +82,9 @@ class ElectricCar(Car):
 my_tesla = ElectricCar('tesla', 'model s', 2019)
 
 print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()
+my_tesla.battery.get_range()
+my_tesla.battery.upgrade_battery()
 my_tesla.battery.describe_battery()
 my_tesla.battery.get_range()
 
