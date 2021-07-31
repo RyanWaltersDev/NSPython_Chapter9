@@ -1,4 +1,5 @@
-from car import Car
+from car import Car 
+from electric_car_module import ElectricCar
 
 # First Car
 
@@ -21,5 +22,13 @@ my_used_car.read_odometer()
 
 my_used_car.increment_odometer(5_000)
 my_used_car.read_odometer()
+
+# Method calls from Car and ElectricCar
+
+my_lincoln = Car('lincoln', 'continental', 2003)
+print(my_lincoln.get_descriptive_name())
+
+my_tesla = ElectricCar('tesla', 'roadster', 2019)
+print(my_tesla.get_descriptive_name())
 
 # END OF PROGRAM
