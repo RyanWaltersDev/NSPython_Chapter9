@@ -24,6 +24,10 @@ class Italian_Restaurant(Restaurant):
         print(f", " .join(sauce_types[0:-1]) +", and "+sauce_types[-1])
 
 
-joannas = Italian_Restaurant("joanna's", 'italian')
+joannas = Italian_Restaurant("joannas", 'italian')
+joannas.open_restaurant()
+joannas.describe_restaurant()
 joannas.display_pasta(['fettucini', 'linguini', 'penne'])
 joannas.display_sauces(['alfredo', 'marinara', 'pesto'])
+
+#END OF PROGRAM

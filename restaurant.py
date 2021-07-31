@@ -11,15 +11,15 @@ class Restaurant:
 
     def describe_restaurant(self):
         '''Print restaurant name and cuisine type'''
-        print(f"{self.restaurant_name} is a {self.cuisine_type} style "
-            "restaurant.")
+        print(f"{self.restaurant_name.title()} is a {self.cuisine_type.title()}" 
+            " style restaurant.")
 
     def open_restaurant(self):
         '''Print a message to indicate restaurant opening'''
         if self.number_served == 0:
-            print(f"{self.restaurant_name} is open!")
+            print(f"{self.restaurant_name.title()} is open!")
         else:
-            print(f"{self.restaurant_name} is open!")
+            print(f"{self.restaurant_name.title()} is open!")
             print(f"So far we have served {self.number_served} customers.")
 
     def set_number_served(self, customers_served):
